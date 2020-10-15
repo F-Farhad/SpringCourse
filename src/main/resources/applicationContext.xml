@@ -13,7 +13,9 @@
           class="ru.alishev.springcourse.ClassicalMusic"
           init-method="doMyInit"
           destroy-method="doMyDestroy"
-          scope="prototype">
+          factory-method="getClassicalMusic">   <!--данная строчка говорит спрингу о том что мы создаем обьект через метод,
+          реализуем паттер фабричный метод, спринг единожды создаст обьект и при повторном запросе клиента данного обьекта
+          он будет возвращать только ссылку, так как тут мы создаем бин singleton-->
     </bean>
 
 </beans>
