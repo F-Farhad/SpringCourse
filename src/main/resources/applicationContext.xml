@@ -9,29 +9,16 @@
 
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
-    <bean id="musicBean1"
+    <bean id="classicalMusic"
           class="ru.alishev.springcourse.ClassicalMusic">
     </bean>
 
-    <bean id="musicBean2"
-          class="ru.alishev.springcourse.RockMusic">
-    </bean>
-
-    <!--<bean id="musicBean3"
-          class="ru.alishev.springcourse.RapMusic">
-    </bean>-->
-
     <bean id="musicPlayer"
-          class="ru.alishev.springcourse.MusicPlayer">
-        <property name="musicList">
-            <list>
-                <ref bean="musicBean1"/>
-                <ref bean="musicBean2"/>
-            </list>
-        </property>
-
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
+          class="ru.alishev.springcourse.MusicPlayer"
+          scope="prototype">
+          <property name="music" ref="classicalMusic" />
+          <property name="name" value="${musicPlayer.name}" />  <!--получаем имя с файла    ${-->
+          <property name="volume" value="70" />                 <!--сами заносим число-->
     </bean>
 
 </beans>

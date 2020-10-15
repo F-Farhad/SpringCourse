@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MusicPlayer {
-    private List<Music> musicList = new ArrayList<>();
+    private Music music;
 
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
+    public void setMusic(Music music) {
+        this.music = music;
     }
 
     private String name;
@@ -30,8 +30,6 @@ public class MusicPlayer {
     }
 
     public void playMusic(){
-        for(Music music: musicList){
-            System.out.println(music.getSong());
-        }
+        System.out.println(music.getSong());
     }
 }
