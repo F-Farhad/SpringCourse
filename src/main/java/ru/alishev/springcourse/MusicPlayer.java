@@ -6,10 +6,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class MusicPlayer {
     private ClassicalMusic classicalMusic;
+
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic) {
+    public void setClassicalMusic(ClassicalMusic classicalMusic){
         this.classicalMusic = classicalMusic;
     }
+
     public void playMusic(){
         System.out.println(classicalMusic.getSong());
     }
