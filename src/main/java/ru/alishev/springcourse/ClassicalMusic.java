@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component("classicalMusic")    //явно указываем id
 public class ClassicalMusic implements Music {
 
     @PostConstruct
